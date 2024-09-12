@@ -93,7 +93,7 @@ sed -i "/serverKind: useOmnisharpServer ? 'OmniSharp' : 'Roslyn',/d" "$SOURCE_DI
 sed -i "/reporter.sendTelemetryEvent('CSharpActivated', activationProperties);/d" "$SOURCE_DIR"/src/main.ts
 
 # Patch src/observers/telemetryObserver.ts
-sed -i "/this.reporter,/d" "$SOURCE_DIR"/src/observers/telemetryObserver.ts
+sed -i "/this.reporter,/d" "$SOURCE_DIR"/src/omnisharp/observers/telemetryObserver.ts
 
 # Patch src/packageManager/downloadAndInstallPackages.ts
 sed -i "/import { DownloadFile } from '.\/fileDownloader';/a import { InstallTarGz } from '.\/tarGzInstaller';" "$SOURCE_DIR"/src/packageManager/downloadAndInstallPackages.ts
