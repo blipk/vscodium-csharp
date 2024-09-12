@@ -126,6 +126,9 @@ jobs:
           set -x
           set -e
           git checkout main
+
+          git fsck --full --no-dangling
+
           git merge --no-commit --no-ff upstream/main
           git reset -- ./.github
           git reset -- ./.vscode
