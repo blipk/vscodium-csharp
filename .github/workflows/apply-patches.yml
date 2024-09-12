@@ -108,9 +108,11 @@ jobs:
           set -e
           git checkout upstream/main -- .
 
-          git reset HEAD .github .vscode
-          git restore --staged .github .vscode
-          git add -- ':!./.github' ':!./.vscode'
+          git reset HEAD .github
+          #git reset HEAD .vscode
+          git restore --staged .github
+          #git restore --staged .vscode
+          git add -- ':!./.github' #':!./.vscode'
 
           git commit -m "[pre-patch] Update from upstream at ${{ steps.date.outputs.RUN_DATE_TIME }}" || true
           git push origin main || true
@@ -134,15 +136,18 @@ jobs:
 
           git merge --no-commit --no-ff upstream/main || true
           git reset -- ./.github || true
-          git reset -- ./.vscode || true
+          #git reset -- ./.vscode || true
 
       - name: Commit & Push Changes
         run: |
           set -x
           set -e
-          git reset HEAD .github .vscode
-          git restore --staged .github .vscode
-          git add -- ':!./.github' ':!./.vscode'
+
+          git reset HEAD .github
+          #git reset HEAD .vscode
+          git restore --staged .github
+          #git restore --staged .vscode
+          git add -- ':!./.github' #':!./.vscode'
 
           git commit -m "[post-patch] patching at ${{ steps.date.outputs.RUN_DATE_TIME }}"
           git push origin main
