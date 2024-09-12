@@ -6,15 +6,14 @@
 import { PackageError } from './packageError';
 import { NestedError } from '../nestedError';
 import { DownloadFile } from './fileDownloader';
-import { InstallTarGz } from './tarGzInstaller';
 import { InstallZip } from './zipInstaller';
 import { EventStream } from '../eventStream';
 import { NetworkSettingsProvider } from '../networkSettings';
 import { AbsolutePathPackage } from './absolutePathPackage';
 import { touchInstallFile, InstallFileType, deleteInstallFile, installFileExists } from '../common';
-import { InstallationFailure, IntegrityCheckFailure } from '../omnisharp/loggingEvents';
+import { InstallationFailure, IntegrityCheckFailure } from '../shared/loggingEvents';
 import { mkdirpSync } from 'fs-extra';
-import { PackageInstallStart } from '../omnisharp/loggingEvents';
+import { PackageInstallStart } from '../shared/loggingEvents';
 import { DownloadValidator } from './isValidDownload';
 import { CancellationToken } from 'vscode';
 
@@ -46,11 +45,7 @@ export async function downloadAndInstallPackages(
                 );
                 if (downloadValidator(buffer, pkg.integrity, eventStream)) {
                     installationStage = 'installPackage';
-                    if (pkg.url.includes('.tar.gz')) {
-                        await InstallTarGz(buffer, pkg.description, pkg.installPath, eventStream);
-                    } else {
-                        await InstallZip(buffer, pkg.description, pkg.installPath, pkg.binaries, eventStream);
-                    }
+                    await InstallZip(buffer, pkg.description, pkg.installPath, pkg.binaries, eventStream);
                     installationStage = 'touchLockFile';
                     await touchInstallFile(pkg.installPath, InstallFileType.Lock);
                     break;

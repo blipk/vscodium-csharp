@@ -1,20 +1,20 @@
 {
   "name": "csharp",
-  "publisher": "blipk",
-  "version": "2024-09-01_06-33",
-  "description": "Base language support for C# with libre NetCoreDbg debugger",
-  "displayName": "C# with NetCoreDbg",
-  "author": "blipk",
-  "license": "SEE LICENSE.txt AND RuntimeLicenses/license.txt",
-  "qna": "https://github.com/blipk/vscodium-csharp/issues",
+  "publisher": "ms-dotnettools",
+  "version": "42.42.42-placeholder",
+  "description": "Base language support for C#",
+  "displayName": "C#",
+  "author": "Microsoft Corporation",
+  "license": "SEE LICENSE IN RuntimeLicenses/license.txt",
+  "qna": "https://github.com/dotnet/vscode-csharp/issues",
   "icon": "images/csharpIcon.png",
   "preview": false,
   "bugs": {
-    "url": "https://github.com/blipk/vscodium-csharp"
+    "url": "https://github.com/dotnet/vscode-csharp"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/blipk/vscodium-csharp"
+    "url": "https://github.com/dotnet/vscode-csharp"
   },
   "categories": [
     "Debuggers",
@@ -37,11 +37,11 @@
     }
   },
   "defaults": {
-    "roslyn": "4.12.0-3.24430.2",
+    "roslyn": "4.12.0-3.24461.4",
     "omniSharp": "1.39.11",
     "razor": "9.0.0-preview.24427.2",
     "razorOmnisharp": "7.0.0-preview.23363.1",
-    "xamlTools": "17.12.35230.10"
+    "xamlTools": "17.12.35311.18"
   },
   "main": "./dist/extension",
   "l10n": "./l10n",
@@ -49,13 +49,13 @@
     {
       "moniker": {
         "name": "Microsoft.CodeAnalysis.LanguageClient.SolutionSnapshotProvider",
-        "version": "2024-09-01_06-33"
+        "version": "0.1"
       }
     },
     {
       "moniker": {
         "name": "Microsoft.VisualStudio.CSharpExtension.BuildResultService",
-        "version": "2024-09-01_06-33"
+        "version": "0.1"
       }
     }
   ],
@@ -171,7 +171,7 @@
     "vscode-oniguruma": "^1.6.1",
     "vscode-textmate": "^6.0.0",
     "vscode-uri": "^3.0.7",
-    "webpack": "5.76.0",
+    "webpack": "5.94.0",
     "webpack-cli": "4.6.0"
   },
   "runtimeDependencies": [
@@ -420,21 +420,37 @@
     {
       "id": "Debugger",
       "description": ".NET Core Debugger (Windows / x64)",
-      "url": "https://github.com/Samsung/netcoredbg/releases/download/3.1.0-1031/netcoredbg-win64.zip",
-      "installPath": ".debugger",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-win7-x64.zip",
+      "installPath": ".debugger/x86_64",
       "platforms": [
         "win32"
       ],
       "architectures": [
-        "x86_64"
+        "x86_64",
+        "arm64"
       ],
-      "installTestPath": ".debugger/netcoredbg/netcoredbg.exe"
+      "installTestPath": "./.debugger/x86_64/vsdbg-ui.exe",
+      "integrity": "3D8F046E44F7E7A5A4B6C24468D2AEBC4773F28E66F9E732D3D5E76F79C3DB32"
+    },
+    {
+      "id": "Debugger",
+      "description": ".NET Core Debugger (Windows / ARM64)",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-win10-arm64.zip",
+      "installPath": ".debugger/arm64",
+      "platforms": [
+        "win32"
+      ],
+      "architectures": [
+        "arm64"
+      ],
+      "installTestPath": "./.debugger/arm64/vsdbg-ui.exe",
+      "integrity": "142B58C35C70D31094AF4AB31A2B11BDB4FA747811D086AB079AD260EF00ACBC"
     },
     {
       "id": "Debugger",
       "description": ".NET Core Debugger (macOS / x64)",
-      "url": "https://github.com/Samsung/netcoredbg/releases/download/3.1.0-1031/netcoredbg-osx-amd64.tar.gz",
-      "installPath": ".debugger",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-osx-x64.zip",
+      "installPath": ".debugger/x86_64",
       "platforms": [
         "darwin"
       ],
@@ -443,14 +459,52 @@
         "arm64"
       ],
       "binaries": [
-        "./netcoredbg"
+        "./vsdbg-ui",
+        "./vsdbg"
       ],
-      "installTestPath": ".debugger/netcoredbg/netcoredbg"
+      "installTestPath": "./.debugger/x86_64/vsdbg-ui",
+      "integrity": "BCABF433604B2206F08638EDE8DF921CF8807E23D48824F320BA1829CB0A8BDD"
+    },
+    {
+      "id": "Debugger",
+      "description": ".NET Core Debugger (macOS / arm64)",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-osx-arm64.zip",
+      "installPath": ".debugger/arm64",
+      "platforms": [
+        "darwin"
+      ],
+      "architectures": [
+        "arm64"
+      ],
+      "binaries": [
+        "./vsdbg-ui",
+        "./vsdbg"
+      ],
+      "installTestPath": "./.debugger/arm64/vsdbg-ui",
+      "integrity": "641E189D1ECF36506FFEE29E85131AFC5575172435F3D67A5E1B55861270FA45"
+    },
+    {
+      "id": "Debugger",
+      "description": ".NET Core Debugger (linux / ARM)",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-linux-arm.zip",
+      "installPath": ".debugger",
+      "platforms": [
+        "linux"
+      ],
+      "architectures": [
+        "arm"
+      ],
+      "binaries": [
+        "./vsdbg-ui",
+        "./vsdbg"
+      ],
+      "installTestPath": "./.debugger/vsdbg-ui",
+      "integrity": "F4932D5E5C01F4147D3735177496B8DE922A92A9B975CC89D52C2227F008B193"
     },
     {
       "id": "Debugger",
       "description": ".NET Core Debugger (linux / ARM64)",
-      "url": "https://github.com/Samsung/netcoredbg/releases/download/3.1.0-1031/netcoredbg-linux-arm64.tar.gz",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-linux-arm64.zip",
       "installPath": ".debugger",
       "platforms": [
         "linux"
@@ -459,26 +513,65 @@
         "arm64"
       ],
       "binaries": [
-        "./netcoredbg"
+        "./vsdbg-ui",
+        "./vsdbg"
       ],
-      "installTestPath": ".debugger/netcoredbg/netcoredbg"
+      "installTestPath": "./.debugger/vsdbg-ui",
+      "integrity": "3E3BBCF80931FA704CF33CD1BAE72E0FE0E021968070FC6D4156BBC2BD797D77"
     },
     {
       "id": "Debugger",
-      "description": ".NET Core Debugger (linux / x64)",
-      "url": "https://github.com/Samsung/netcoredbg/releases/download/3.1.0-1031/netcoredbg-linux-amd64.tar.gz",
+      "description": ".NET Core Debugger (linux musl / x64)",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-linux-musl-x64.zip",
       "installPath": ".debugger",
       "platforms": [
-        "linux",
         "linux-musl"
       ],
       "architectures": [
         "x86_64"
       ],
       "binaries": [
-        "./netcoredbg"
+        "./vsdbg-ui",
+        "./vsdbg"
       ],
-      "installTestPath": ".debugger/netcoredbg/netcoredbg"
+      "installTestPath": "./.debugger/vsdbg-ui",
+      "integrity": "5B83C49084D3A5F314AD18E25DE8042DF6D17335A6535A60307ADF07A777CB49"
+    },
+    {
+      "id": "Debugger",
+      "description": ".NET Core Debugger (linux musl / ARM64)",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-linux-musl-arm64.zip",
+      "installPath": ".debugger",
+      "platforms": [
+        "linux-musl"
+      ],
+      "architectures": [
+        "arm64"
+      ],
+      "binaries": [
+        "./vsdbg-ui",
+        "./vsdbg"
+      ],
+      "installTestPath": "./.debugger/vsdbg-ui",
+      "integrity": "633C5F3A419CDED6842088BFAF8F4F52CDEF0149F3DBC1BB5BA2AA87F159A21F"
+    },
+    {
+      "id": "Debugger",
+      "description": ".NET Core Debugger (linux / x64)",
+      "url": "https://vsdebugger.azureedge.net/coreclr-debug-2-47-0/coreclr-debug-linux-x64.zip",
+      "installPath": ".debugger",
+      "platforms": [
+        "linux"
+      ],
+      "architectures": [
+        "x86_64"
+      ],
+      "binaries": [
+        "./vsdbg-ui",
+        "./vsdbg"
+      ],
+      "installTestPath": "./.debugger/vsdbg-ui",
+      "integrity": "83D55C4BF672F6369E6C152DA7888398824AE59136F224B098154F5F41FD16FA"
     },
     {
       "id": "RazorOmnisharp",
@@ -821,6 +914,12 @@
             "type": "boolean",
             "default": "true",
             "description": "%configuration.dotnet.navigation.navigateToDecompiledSources%",
+            "order": 60
+          },
+          "dotnet.navigation.navigateToSourceLinkAndEmbeddedSources": {
+            "type": "boolean",
+            "default": "true",
+            "description": "%configuration.dotnet.navigation.navigateToSourceLinkAndEmbeddedSources%",
             "order": 60
           },
           "dotnet.quickInfo.showRemarksInQuickInfo": {
@@ -2178,7 +2277,7 @@
                   "pipeCwd": "${workspaceFolder}",
                   "pipeProgram": "enter the fully qualified path for the pipe program name, for example '/usr/bin/ssh'",
                   "pipeArgs": [],
-                  "debuggerPath": "enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg"
+                  "debuggerPath": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
                 },
                 "properties": {
                   "pipeCwd": {
@@ -2212,7 +2311,7 @@
                   "debuggerPath": {
                     "type": "string",
                     "description": "%generateOptionsSchema.pipeTransport.debuggerPath.description%",
-                    "default": "enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg"
+                    "default": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
                   },
                   "pipeEnv": {
                     "type": "object",
@@ -2710,7 +2809,7 @@
                   "pipeCwd": "${workspaceFolder}",
                   "pipeProgram": "enter the fully qualified path for the pipe program name, for example '/usr/bin/ssh'",
                   "pipeArgs": [],
-                  "debuggerPath": "enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg"
+                  "debuggerPath": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
                 },
                 "properties": {
                   "pipeCwd": {
@@ -2744,7 +2843,7 @@
                   "debuggerPath": {
                     "type": "string",
                     "description": "%generateOptionsSchema.pipeTransport.debuggerPath.description%",
-                    "default": "enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg"
+                    "default": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
                   },
                   "pipeEnv": {
                     "type": "object",
@@ -3131,7 +3230,7 @@
                 "pipeCwd": "^\"\\${workspaceFolder}\"",
                 "pipeProgram": "^\"${3:enter the fully qualified path for the pipe program name, for example '/usr/bin/ssh'}\"",
                 "pipeArgs": [],
-                "debuggerPath": "^\"${4:enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg}\""
+                "debuggerPath": "^\"${4:enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg}\""
               }
             }
           },
@@ -3146,7 +3245,7 @@
                 "pipeCwd": "^\"\\${workspaceFolder}\"",
                 "pipeProgram": "^\"${1:enter the fully qualified path for the pipe program name, for example '/usr/bin/ssh'}\"",
                 "pipeArgs": [],
-                "debuggerPath": "^\"${2:enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg}\""
+                "debuggerPath": "^\"${2:enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg}\""
               }
             }
           },
@@ -3518,7 +3617,7 @@
                   "pipeCwd": "${workspaceFolder}",
                   "pipeProgram": "enter the fully qualified path for the pipe program name, for example '/usr/bin/ssh'",
                   "pipeArgs": [],
-                  "debuggerPath": "enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg"
+                  "debuggerPath": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
                 },
                 "properties": {
                   "pipeCwd": {
@@ -3552,7 +3651,7 @@
                   "debuggerPath": {
                     "type": "string",
                     "description": "%generateOptionsSchema.pipeTransport.debuggerPath.description%",
-                    "default": "enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg"
+                    "default": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
                   },
                   "pipeEnv": {
                     "type": "object",
@@ -4050,7 +4149,7 @@
                   "pipeCwd": "${workspaceFolder}",
                   "pipeProgram": "enter the fully qualified path for the pipe program name, for example '/usr/bin/ssh'",
                   "pipeArgs": [],
-                  "debuggerPath": "enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg"
+                  "debuggerPath": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
                 },
                 "properties": {
                   "pipeCwd": {
@@ -4084,7 +4183,7 @@
                   "debuggerPath": {
                     "type": "string",
                     "description": "%generateOptionsSchema.pipeTransport.debuggerPath.description%",
-                    "default": "enter the path for the debugger on the target machine, for example /usr/bin/netcoredbg"
+                    "default": "enter the path for the debugger on the target machine, for example ~/vsdbg/vsdbg"
                   },
                   "pipeEnv": {
                     "type": "object",
@@ -4476,7 +4575,7 @@
                 "description": "Environment variables passed to dotnet. Only valid for hosted apps."
               },
               "dotNetConfig": {
-                "description": "Options passed to the underlying .NET debugger. For more info, see https://github.com/blipk/vscodium-csharp/blob/main/debugger.md.",
+                "description": "Options passed to the underlying .NET debugger. For more info, see https://github.com/dotnet/vscode-csharp/blob/main/debugger.md.",
                 "type": "object",
                 "required": [],
                 "default": {},
@@ -5486,6 +5585,11 @@
         "contents": "%viewsWelcome.debug.contents%",
         "when": "debugStartLanguage == csharp && !dotnet.debug.serviceBrokerAvailable"
       }
-    ]
+    ],
+    "configurationDefaults": {
+      "[xaml]": {
+        "editor.wordBasedSuggestions": "off"
+      }
+    }
   }
 }
