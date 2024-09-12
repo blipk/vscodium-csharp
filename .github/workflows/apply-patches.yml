@@ -41,7 +41,7 @@ jobs:
         run: git remote add upstream https://github.com/dotnet/vscode-csharp.git
 
       - name: Fetch Upstream
-        run: git fetch upstream
+        run: git fetch upstream/main
 
       - name: Check for Upstream Changes
         id: check-changes
