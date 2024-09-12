@@ -127,14 +127,14 @@ jobs:
           set -e
           git checkout main
 
-          #git checkout -f HEAD
-          #rm .git/index
-          #git reset
-          #git fsck --full --no-dangling
+          git checkout -f HEAD
+          rm .git/index
+          git reset
+          git fsck --full --no-dangling
 
-          git merge --no-commit --no-ff upstream/main
-          git reset -- ./.github
-          git reset -- ./.vscode
+          git merge --no-commit --no-ff upstream/main || true
+          git reset -- ./.github || true
+          git reset -- ./.vscode || true
 
       - name: Commit & Push Changes
         run: |
