@@ -109,7 +109,6 @@ jobs:
           git checkout upstream/main -- .
 
           git add .
-
           git commit -m "[pre-patch] Update from upstream at ${{ steps.date.outputs.RUN_DATE_TIME }}" || true
           git push origin main || true
 
@@ -132,7 +131,6 @@ jobs:
           set -e
 
           git add .
-
           git commit -m "[post-patch] patching at ${{ steps.date.outputs.RUN_DATE_TIME }}"
           git push origin main
 
