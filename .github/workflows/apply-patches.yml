@@ -106,7 +106,7 @@ jobs:
         run: |
           set -x
           set -e
-          git checkout upstream/main -- .
+          git checkout upstream/main #-- .
 
           git reset HEAD .github .vscode
           git restore --staged .github .vscode
