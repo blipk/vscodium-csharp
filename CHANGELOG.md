@@ -4,6 +4,9 @@
 - Debug from .csproj and .sln [#5876](https://github.com/dotnet/vscode-csharp/issues/5876)
 
 # Latest
+* Bumped xamlTools to 17.13.35422.31 (PR: [#7685](https://github.com/dotnet/vscode-csharp/pull/7685))
+
+# 2.53.x
 * Update Roslyn to 4.13.0-1.24518.1 (PR: [#7670](https://github.com/dotnet/vscode-csharp/pull/7670))
   * Fix issue where server sometimes crashed when saving new C# file for the first time (PR: [#75509](https://github.com/dotnet/roslyn/pull/75509))
   * Report LSP loading telemetry (PR: [#75402](https://github.com/dotnet/roslyn/pull/75402))
