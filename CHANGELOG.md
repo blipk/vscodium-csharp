@@ -4,6 +4,14 @@
 - Debug from .csproj and .sln [#5876](https://github.com/dotnet/vscode-csharp/issues/5876)
 
 # 2.55.x
+* Update Roslyn to 4.13.0-2.24531.3 (PR: [#7722](https://github.com/dotnet/vscode-csharp/pull/7722))
+  * Proffer project system query service (PR: [#75682](https://github.com/dotnet/roslyn/pull/75682))
+  * Ensure discards are initially soft selected in VSCode (PR: [#75655](https://github.com/dotnet/roslyn/pull/75655))
+  * Reduce allocations in VirtualCharService.CreateVirtualCharSequence (PR: [#75654](https://github.com/dotnet/roslyn/pull/75654))
+  * Reduce allocations in TextDocumentStates.AddRange (PR: [#75640](https://github.com/dotnet/roslyn/pull/75640))
+* Update Razor to 9.0.0-preview.24531.4 (PR: [#7723](https://github.com/dotnet/vscode-csharp/pull/7723))
+  * Fix aggregate telemetry reliability (PR: [#11134](https://github.com/dotnet/razor/pull/11134))
+  * [FUSE] Fix OnAutoInsert and override completion and possible others (PR: [#11122](https://github.com/dotnet/razor/pull/11122))
 * Update Roslyn to 4.13.0-2.24529.3 (PR: [#7705](https://github.com/dotnet/vscode-csharp/pull/7705))
 * Update Razor to 9.0.0-preview.24528.3 (PR: [#7705](https://github.com/dotnet/vscode-csharp/pull/7705))
   * Update project configuration from Roslyn info (#11092) (PR: [#11092](https://github.com/dotnet/razor/pull/11092))
@@ -15,7 +23,13 @@
   * Shorten names shown in 'pull member up' (PR: [#75643](https://github.com/dotnet/roslyn/pull/75643))
   * Fix inaccessible constructors shown in sighelp (PR: [#75642](https://github.com/dotnet/roslyn/pull/75642))
   * Allow the client to update the server logging level dynamically (PR: [#75615](https://github.com/dotnet/roslyn/pull/75615))
-* Bumped xamlTools to 17.13.35429.30 (PR: [#7706](https://github.com/dotnet/vscode-csharp/pull/7706))
+* Bumped xamlTools to 17.13.35431.11 (PR: [#7719](https://github.com/dotnet/vscode-csharp/pull/7719))
+  * XAML validation improvements
+      * Validating  properties of Setters, Triggers, Conditions.
+      * Validating text values like `<Color> Red </Color>`
+      * Warnings for obsolete values like LayoutOptions.CenterAndExpand
+      * XAML IntelliseSense completions for ResourceDictionary.Source
+      * XAML IntelliseSense completions for name properties like Setter.TargetName
 
 # 2.54.x
 * Update debugger packages to v2.54.0 (PR: [#7691](https://github.com/dotnet/vscode-csharp/pull/7691))
@@ -37,6 +51,7 @@
   * Report a better error for void components (#11041) (PR: [#11041](https://github.com/dotnet/razor/pull/11041))
   * Ensure model directives are mapped at runtime (#11007) (PR: [#11007](https://github.com/dotnet/razor/pull/11007))
   * Including @using for Out-of-Scope Razor Component References (#10651) (PR: [#10651](https://github.com/dotnet/razor/pull/10651))
+* Make checkDevCert a modal dialogue (PR: [#7704](https://github.com/dotnet/vscode-csharp/pull/7704))
 
 # 2.53.x
 * Update Roslyn to 4.13.0-1.24518.1 (PR: [#7670](https://github.com/dotnet/vscode-csharp/pull/7670))
