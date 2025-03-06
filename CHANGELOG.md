@@ -4,6 +4,7 @@
 - Debug from .csproj and .sln [#5876](https://github.com/dotnet/vscode-csharp/issues/5876)
 
 # 2.69.x
+* Bump xamlTools to 17.14.35904.287 (PR: [#8042](https://github.com/dotnet/vscode-csharp/pull/8042))
 
 # 2.68.x
 * Update Razor to 9.0.0-preview.25125.9 (PR: [#8027](https://github.com/dotnet/vscode-csharp/pull/8027))
@@ -11,7 +12,8 @@
   * Fix file path service, and integration tests (#11556) (PR: [#11556](https://github.com/dotnet/razor/pull/11556))
   * Add ParserOptions and CodeGenerationOptions properties to RazorCodeDocument and rationalize options configuration (#11526) (PR: [#11526](https://github.com/dotnet/razor/pull/11526))
   * Fix parsing of quotes in attribute names (#11543) (PR: [#11543](https://github.com/dotnet/razor/pull/11543))
-  * Bump xamlTools to 17.14.35828.13 (PR: [#8032](https://github.com/dotnet/vscode-csharp/pull/8032))
+* Bump xamlTools to 17.14.35828.13 (PR: [#8032](https://github.com/dotnet/vscode-csharp/pull/8032))
+* Ignore preview versions when locating the .NET runtime (PR: [#8043](https://github.com/dotnet/vscode-csharp/pull/8043))
 
 # 2.67.x
 * Update Razor to 9.0.0-preview.25125.9 (PR: [#8027](https://github.com/dotnet/vscode-csharp/pull/8027))
