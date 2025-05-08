@@ -42,9 +42,9 @@
   "defaults": {
     "roslyn": "5.0.0-1.25256.5",
     "omniSharp": "1.39.12",
-    "razor": "10.0.0-preview.25255.4",
+    "razor": "10.0.0-preview.25256.6",
     "razorOmnisharp": "7.0.0-preview.23363.1",
-    "xamlTools": "17.14.36010.33"
+    "xamlTools": "17.14.36106.43"
   },
   "main": "./dist/extension",
   "l10n": "./l10n",
@@ -1523,7 +1523,7 @@
           "razor.languageServer.forceRuntimeCodeGeneration": {
             "type": "boolean",
             "scope": "machine-overridable",
-            "default": null,
+            "default": true,
             "description": "%configuration.razor.languageServer.forceRuntimeCodeGeneration%",
             "order": 90,
             "tags": [
