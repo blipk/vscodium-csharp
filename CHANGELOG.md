@@ -4,8 +4,13 @@
 - Debug from .csproj and .sln [#5876](https://github.com/dotnet/vscode-csharp/issues/5876)
 
 # 2.81.x
+* Update Debugger Packages to v2.81.0(PR: [#8329](https://github.com/dotnet/vscode-csharp/pull/8329))                                           
+* Localization changes (PR: [#8327](https://github.com/dotnet/vscode-csharp/pull/8327))         
 
 # 2.80.x
+* Fix license link in marketplace (PR: [#8318](https://github.com/dotnet/vscode-csharp/pull/8318))
+* Localization (PR: [#8309](https://github.com/dotnet/vscode-csharp/pull/8309))
+* Re-enabling and stabilizing completion tests (PR: [#8306](https://github.com/dotnet/vscode-csharp/pull/8306))
 
 # 2.79.x
 * Bump Roslyn to 5.0.0-1.25266.2 (PR: [#8298](https://github.com/dotnet/vscode-csharp/pull/8298))
