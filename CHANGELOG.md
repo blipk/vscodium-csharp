@@ -4,7 +4,8 @@
 - Debug from .csproj and .sln [#5876](https://github.com/dotnet/vscode-csharp/issues/5876)
 
 # 2.82.x
-* Bump Roslyn to 5.0.0-1.25302.4 (PR: [#8340](https://github.com/dotnet/vscode-csharp/pull/8340))
+* Bump Roslyn to 5.0.0-1.25302.10 (PR: [#8347](https://github.com/dotnet/vscode-csharp/pull/8347))
+  * Directly create virtual project when dotnet run-api is missing for now(PR: [#78788](https://github.com/dotnet/roslyn/pull/78788))
   * Ensure sln load uses project absolute paths(PR: [#78772](https://github.com/dotnet/roslyn/pull/78772))
   * Switch return to continue(PR: [#78781](https://github.com/dotnet/roslyn/pull/78781))
   * Fix cast before we unsubscribe(PR: [#78776](https://github.com/dotnet/roslyn/pull/78776))
@@ -69,7 +70,7 @@
   * Add new shared SelectXXXAsArray helpers (#11796) (PR: [#11796](https://github.com/dotnet/razor/pull/11796))
 
 # 2.76.x
-* Bump Roslyn to 5.0.0-1.25256.5 (PR: [#8254](https://github.com/dotnet/vscode-csharp/pull/8254))
+* Bump Roslyn to 5.0.0-1.25257.6 (PR: [#8264](https://github.com/dotnet/vscode-csharp/pull/8264))
   * Do not parse URIs during LSP serialization/deserialization(PR: [#76691](https://github.com/dotnet/roslyn/pull/76691))
   * Ensure hover markdown for supported platforms uses non-breaking spaces for indentation(PR: [#78405](https://github.com/dotnet/roslyn/pull/78405))
   * Change O(n) + O(lg n) search in SolutionState.SortedProjectStates to just O(lg n) (#78427) (PR: [#78427](https://github.com/dotnet/roslyn/pull/78427))
