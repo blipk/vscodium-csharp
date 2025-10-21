@@ -5,3 +5,4 @@
 - Consider any other patches/automations to keep patches compatible with upstream into the future
 - Consider releasing versions based on version.json when upstream makes a release, rather than following all changes to upstream main with dated versions
 - Consider relaxing linting exceptions in build process
+- Add dry run to `replacer.py` and don't commit unless all patches pass
