@@ -1,5 +1,6 @@
 ###### Development notes
 
+- Remove complications of being a fork and GHA git hackery - instead move this __patching directory to top level and just clone then patch in the GitHub Action Runner
 - Create patches for the github workflows that check and bump the version of the `setup-dotnet@v4` action
 - Port `sed` patches to python patcher for better failure observability
 - Consider any other patches/automations to keep patches compatible with upstream into the future
